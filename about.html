@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Navbar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+	
+    <style>
+        .navbar {
+            background-color: #0d1b2a;
+            padding: 1rem;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #00bfa6;
+        }
+        .nav-link {
+            color: white !important;
+            margin-right: 1rem;
+        }
+        .navbar-nav {
+            margin-left: auto;
+        }
+        .btn-quote {
+            background-color: #0d6efd;
+            color: white;
+            border-radius: 25px;
+            padding: 0.5rem 1.5rem;
+            margin-left: 1rem;
+        }
+        .banner {
+            background-image: url('ab.jpg'); /* Replace 'your-image-path.jpg' with the path to your banner image */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            height: 500px;
+            width: 100%;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+        .header-content h1 {
+            font-size: 3rem;
+            animation: fadeInDown 2s ease-in-out;
+        }
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+             section.about-us {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-content {
+            flex: 1;
+            padding-right: 40px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .text-content h1 {
+            font-size: 36px;
+            color: #333;
+        }
+
+        .text-content p {
+            font-size: 16px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .image-content img {
+            border-radius: 12px;
+            width: 350px;
+            height: auto;
+            animation: fadeInImage 2s ease-in-out;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            background-color: #f2f3f7;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            flex: 1;
+            margin: 0 10px;
+            animation: fadeInStats 2s ease-in-out;
+        }
+
+        .stat-box h2 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .stat-box p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInImage {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInStats {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 1024px) {
+            section.about-us {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .text-content {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .image-content img {
+                width: 100%;
+            }
+
+            .stat-box {
+                margin: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .text-content h1 {
+                font-size: 28px;
+            }
+
+            .text-content p {
+                font-size: 14px;
+            }
+
+            .stat-box h2 {
+                font-size: 20px;
+            }
+
+            .stat-box p {
+                font-size: 12px;
+            }
+
+            .stats {
+                flex-direction: column;
+            }
+
+            .stat-box {
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            section.about-us {
+                padding: 10px;
+            }
+
+            .text-content h1 {
+                font-size: 24px;
+            }
+
+            .text-content p {
+                font-size: 12px;
+            }
+
+            .stat-box h2 {
+                font-size: 18px;
+            }
+
+            .stat-box p {
+                font-size: 10px;
+            }
+
+            .image-content img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        
+		 section.team {
+            max-width: 1200px;
+            margin: 50px auto;
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 40px;
+            animation: fadeInTitle 2s ease-in-out;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            width: 250px;
+            margin-bottom: 30px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .team-member img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: zoomIn 1.5s ease-in-out;
+        }
+
+        .team-member h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeInTitle {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 1024px) {
+            .team-container {
+                justify-content: center;
+            }
+
+            .team-member {
+                width: 220px;
+            }
+
+            .team-member img {
+                width: 160px;
+                height: 160px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .team-member h3 {
+                font-size: 18px;
+            }
+
+            .team-member p {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-member {
+                width: 180px;
+            }
+
+            .team-member img {
+                width: 140px;
+                height: 140px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .team-member h3 {
+                font-size: 16px;
+            }
+
+            .team-member p {
+                font-size: 11px;
+            }
+        }
+		
+		.award-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.award-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.award-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 100%; /* Full width on mobile */
+    max-width: 300px; /* Maximum width for larger screens */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.award-image {
+    width: 100%;
+    height: auto;
+    max-width: 150px; /* Adjust as needed */
+    margin-bottom: 15px;
+}
+
+.award-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.award-description {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .award-container {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center;
+    }
+
+    .award-item {
+        width: 90%; /* Full width with some margin on small screens */
+    }
+}
+
+.navbar-brand .logo {
+        width: 50px; /* Adjust the logo size */
+        height: auto;
+        margin-right: 5px; /* Reduce space between the logo and text */
+}
+		  
+		</style>
+		
+		</head>
+		
+		
+		<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">  Master Trip</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="packages.html">Packages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+            
+            </div>
+        </div>
+    </nav>
+
+    
+	<div class="banner">
+        <div class="header-content">
+            <h1>Live With Adventure</h1>
+			<br>
+            <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.header-content h1').animate({
+                opacity: 1
+            }, 2000);
+        });
+    </script>
+	
+	
+	<br><br>
+	<section class="about-us">
+    <!-- Left Section: Text Content -->
+    <div class="text-content">
+        <p style="color: blue;">About Us</p>
+        <h1>Our Dream is Global Learning Transformation</h1>
+        <p>Kawruh was founded by Robert Anderson, a passionate lifelong learner, and Maria Sanchez, a visionary educator. Their shared dream was to create a digital haven of knowledge accessible to all. United by their belief in the power of education, they embarked on a journey to build Kawruh.</p>
+        
+        <!-- Stats Section -->
+        <div class="stats">
+            <div class="stat-box">
+                <h2>3.5</h2>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-box">
+                <h2>23</h2>
+                <p>Interactive Maps</p>
+            </div>
+            <div class="stat-box">
+                <h2>100+</h2>
+                <p>Positive Reviews</p>
+            </div>
+            <div class="stat-box">
+                <h2>1000+</h2>
+                <p>Customers</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Section: Image Content -->
+    <div class="image-content">
+        <img src="us.JPG" alt="About Us" class="img-fluid">
+    </div>
+</section>
+	
+	<br><br>
+	<section class="team">
+    <h1>Meet Our Team</h1>
+    <div class="team-container">
+        <div class="team-member">
+            <img src="coat.JPG" alt="Team1" class="img-fluid">
+            <h3>John Doe</h3>
+            <p>Travel Specialist</p>
+        </div>
+        <div class="team-member">
+         <img src="rev.JPG" alt="Team2" class="img-fluid">    
+            <h3>Jane Smith</h3>
+            <p>Tour Guide</p>
+        </div>
+        <div class="team-member">
+          <img src="eva.JPG" alt="Team3" class="img-fluid">
+            <h3>Michael Lee</h3>
+            <p>Adventure Planner</p>
+        </div>
+    </div>
+</section>
+	
+	<br><br>
+	<center>
+	 <h1>Our Awards</h1></center>
+	 <section class="award-section">
+        <div class="award-container">
+            <div class="award-item">
+                <img src="aw.png" alt="Award 1" class="award-image">
+                <h2 class="award-title">Best Innovation</h2>
+                <p class="award-description">Awarded for outstanding innovation in technology.</p>
+            </div>
+            <div class="award-item">
+                <img src="ap.png" alt="Award 2" class="award-image">
+                <h2 class="award-title">Excellence in Service</h2>
+                <p class="award-description">Recognized for exceptional customer service.</p>
+            </div>
+            <div class="award-item">
+                <img src="ak.png" alt="Award 3" class="award-image">
+                <h2 class="award-title">Top Performance</h2>
+                <p class="award-description">Awarded for outstanding performance over the year.</p>
+            </div>
+        </div>
+    </section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+ <footer style="background-color: black; color: white; padding: 20px; width: 100%;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto;">
+        <!-- About Us Column -->
+        <div style="width: 30%; padding: 10px;">
+            <h3>About Us</h3>
+            <p>We offer the best travel packages to the world's most popular destinations. Explore the world with us.</p>
+        </div>
+        <!-- Quick Links Column -->
+        <div style="width: 30%; padding: 10px;">
+            <h3>Quick Links</h3>
+            <ul style="list-style-type: none; padding: 0;">
+                <li><a href="#" style="color: white; text-decoration: none;">Home</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;">Destinations</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;">Packages</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;">Contact Us</a></li>
+            </ul>
+        </div>
+        <!-- Contact Us Column -->
+        <div style="width: 30%; padding: 10px;">
+            <h3>Contact Us</h3>
+            <p>Email: info@travelcompany.com</p>
+            <p>Phone: +123 456 7890</p>
+            <p>Address: 123 Travel Street, City, Country</p>
+        </div>
+    </div>
+    <div style="text-align: center; padding: 20px 0; border-top: 1px solid #333;">
+        <p>&copy; 2024 Travel Company. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Responsive Inline Styles -->
+<script>
+    function adjustFooterColumns() {
+        const width = window.innerWidth;
+        const footerColumns = document.querySelectorAll('footer div div');
+        
+        if (width <= 768) {
+            footerColumns.forEach(column => column.style.width = '45%');
+        } else if (width <= 576) {
+            footerColumns.forEach(column => column.style.width = '100%');
+        } else {
+            footerColumns.forEach(column => column.style.width = '30%');
+        }
+    }
+
+    window.addEventListener('resize', adjustFooterColumns);
+    window.addEventListener('load', adjustFooterColumns);
+</script>
+
+	
+	</body>
+	
+	</html>

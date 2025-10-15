@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Navbar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+	
+    <style>
+        .navbar {
+            background-color: #0d1b2a;
+            padding: 1rem;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #00bfa6;
+        }
+        .nav-link {
+            color: white !important;
+            margin-right: 1rem;
+        }
+        .navbar-nav {
+            margin-left: auto;
+        }
+		
+		
+        .btn-quote {
+            background-color: #0d6efd;
+            color: white;
+            border-radius: 25px;
+            padding: 0.5rem 1.5rem;
+            margin-left: 1rem;
+        }
+        .banner {
+            background-image: url('sea.jpg'); /* Replace 'your-image-path.jpg' with the path to your banner image */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            height: 500px;
+            width: 100%;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+        .header-content h1 {
+            font-size: 3rem;
+            animation: fadeInDown 2s ease-in-out;
+        }
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+		
+		 .popular-destinations {
+            padding: 50px 0;
+        }
+        .popular-destinations h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .destination-card {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .destination-card img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+        .destination-card:hover img {
+            transform: scale(1.1);
+        }
+        .destination-card .destination-info {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            border-radius: 5px;
+        }
+        .destination-card .destination-info h5 {
+            font-size: 1.25rem;
+            margin: 0;
+        }
+        .destination-card .destination-info p {
+            margin: 0;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+		
+		 .why-choose-us {
+            background-color: #25273D;
+            color: white;
+            padding: 60px 0;
+        }
+        .why-choose-us h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+        .why-choose-us h2:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: white;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+        }
+        .why-choose-us p {
+            margin-bottom: 1.5rem;
+        }
+        .why-choose-us .info-box {
+            background-color: #313454;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            animation: slideUp 1.5s ease-in-out;
+        }
+        .why-choose-us .info-box:hover {
+            background-color: #38406a;
+        }
+        .info-box h5 {
+            font-size: 1.2rem;
+            color: #1AB188;
+            margin-bottom: 15px;
+        }
+        .info-box p {
+            font-size: 1rem;
+            color: #bbb;
+        }
+        .why-choose-us ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .why-choose-us ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .why-choose-us ul li::before {
+            content: '✔';
+            color: #1AB188;
+            margin-right: 10px;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+		
+		.tips-section {
+            background: #25273D;
+            padding: 60px 0;
+            color: white;
+        }
+        .tips-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            position: relative;
+            animation: fadeInTitle 1s ease-in-out;
+        }
+        .tip-card {
+            background-color: white;
+            color: #0052cc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            animation: fadeInCard 1.2s ease-in-out;
+        }
+        .tip-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        .tip-card img {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+        }
+        .tip-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        @keyframes fadeInTitle {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInCard {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tip-text {
+                font-size: 1rem;
+            }
+
+       .reviews-section {
+            background-color: white;
+            padding: 60px 0;
+        }
+        .reviews-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        .carousel {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+        .review-card {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 0 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+			
+        }
+        .review-card img {
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .review-card p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .review-card .customer-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #0052cc;
+        }
+        .carousel .prev, .carousel .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 10px;
+            margin-top: -22px;
+            color: #333;
+            font-weight: bold;
+            font-size: 1.5rem;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            transition: 0.3s;
+        }
+        .carousel .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .carousel .prev:hover, .carousel .next:hover {
+            background-color: #ddd;
+        }
+        .carousel-dots {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .carousel-dots span {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #ccc;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .active-dot {
+            background-color: #333;
+        }
+        @media (max-width: 768px) {
+            .review-card {
+                padding: 20px;
+            }
+           .carousel a.prev,
+    .carousel a.next {
+        display: none; /* Hide the arrows */
+    }
+}
+
+       .navbar-brand .logo {
+        width: 50px; /* Adjust the logo size */
+        height: auto;
+        margin-right: 5px; /* Reduce space between the logo and text */
+}
+	
+	
+	
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#"> Master Trip</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="packages.html">Packages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+            
+            </div>
+        </div>
+    </nav>
+
+    
+	<div class="banner">
+        <div class="header-content">
+            <h1>Travel With Passion</h1>
+			<br><br>
+            <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.header-content h1').animate({
+                opacity: 1
+            }, 2000);
+        });
+    </script>
+
+   
+    <br><br>
+	<div class="container popular-destinations">
+    <h2>Popular Destinations</h2>
+    <div class="row">
+        <!-- Destination 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="destination-card">
+                <img src="malaysia.jpg" alt="Destination 1">
+                <div class="destination-info">
+                    <h5>Malaysia</h5>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Destination 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="destination-card">
+                <img src="singapore.jpg" alt="Destination 2">
+                <div class="destination-info">
+				    <h5>Singapore</h5>
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Destination 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="destination-card">
+                <img src="turkey.jpg" alt="Destination 3">
+                <div class="destination-info">
+                    <h5>Turkey</h5>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Destination 4 -->
+        <div class="col-md-4 mb-4">
+            <div class="destination-card">
+                <img src="russia.jpg" alt="Destination 4">
+                <div class="destination-info">
+                    <h5>Russia</h5>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Destination 5 -->
+        <div class="col-md-4 mb-4">
+            <div class="destination-card">
+                <img src="vietnam.jpg" alt="Destination 5">
+                <div class="destination-info">
+                    <h5>Vietnam</h5>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Destination 6 -->
+        <div class="col-md-4 mb-4">
+            <div class="destination-card">
+                <img src="thailand.jpg" alt="Destination 6">
+                <div class="destination-info">
+                    <h5>Thailand</h5>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	
+	
+	<br>
+	<section class="why-choose-us">
+    <div class="container">
+        <div class="row">
+            <!-- Image Section -->
+            <div class="col-md-6">
+                <img src="bh.JPG" alt="Why Choose Us" class="img-fluid">
+            </div>
+
+            <!-- Content Section -->
+            <div class="col-md-6">
+                <h2>Why Choose Us</h2>
+                <p>We take the time to understand your individual travel preferences, needs, and dreams.
+				Whether you're planning a luxury vacation, an adventurous tour, or a business trip,
+				we tailor every aspect to fit your desires perfectly.
+
+</p>
+
+                <!-- Info Box 1 -->
+                <div class="info-box">
+                    <h5>A large team with having 24 members</h5>
+                    <p>Our team of travel specialists has extensive experience and deep knowledge of destinations worldwide. 
+					We provide you with insider tips, recommendations, and access to exclusive</p>
+                </div>
+
+                <!-- List Section -->
+                <ul>
+                    <li>We have branches in 10 countries.</li>
+                    <li>Deal in various fields like investment, insurance, etc.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+	
+	<br><br><br>
+	<center>
+	<section class="reviews-section">
+    <h2>What Our Customers Say</h2>
+	<br>
+    <div class="carousel">
+        <!-- Review Slide 1 -->
+        <div class="review-card">
+            <img src="user.png" alt="Customer Image" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+            <p>"I had the best travel experience thanks to this agency! Everything was perfectly planned."</p>
+            <div class="customer-name">- Maisha Ahmed</div>
+        </div>
+        <!-- Review Slide 2 -->
+        <div class="review-card" style="display: none;">
+            <img src="boy.png" alt="Customer Image" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+            <p>"Highly recommend! The customer service was fantastic, and I got great value for my money."</p>
+            <div class="customer-name">- Lucas Smith</div>
+        </div>
+        <!-- Review Slide 3 -->
+        <div class="review-card" style="display: none;">
+            <img src="test.png" alt="Customer Image" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+            <p>"The itinerary was flawless, and the attention to detail made our trip stress-free and enjoyable."</p>
+            <div class="customer-name">- Alex Johnson</div>
+        </div>
+        <!-- Navigation Arrows -->
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+    </div>
+    <!-- Dots/Indicators -->
+    <div class="carousel-dots">
+        <span class="active-dot"></span>
+        <span></span>
+        <span></span>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+        let currentIndex = 0;
+        const reviews = $(".review-card");
+        const dots = $(".carousel-dots span");
+
+        function showReview(index) {
+            reviews.hide();
+            $(reviews[index]).fadeIn();
+            dots.removeClass("active-dot");
+            $(dots[index]).addClass("active-dot");
+        }
+
+        $(".next").click(function() {
+            currentIndex = (currentIndex + 1) % reviews.length;
+            showReview(currentIndex);
+        });
+
+        $(".prev").click(function() {
+            currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
+            showReview(currentIndex);
+        });
+
+        dots.click(function() {
+            currentIndex = $(this).index();
+            showReview(currentIndex);
+        });
+    });
+</script>
+	</center>
+	
+	
+	
+	<br><br><br><br>
+	<section class="tips-section">
+    <div class="container">
+        <h2>Top Travel Tips for Your Next Trip</h2>
+        <div class="row">
+            <!-- Tip 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="tip-card">
+                    <img src="plan.png" alt="Plan Ahead Icon">
+                    <p class="tip-text">Plan Ahead</p>
+                </div>
+            </div>
+            <!-- Tip 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="tip-card">
+                    <img src="budget.png" alt="Budget Your Trip Icon">
+                    <p class="tip-text">Budget Your Trip</p>
+                </div>
+            </div>
+            <!-- Tip 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="tip-card">
+                    <img src="book.png" alt="Book Early Icon">
+                    <p class="tip-text">Book Tickets Early</p>
+                </div>
+            </div>
+            <!-- Tip 4 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="tip-card">
+                    <img src="local.png" alt="Get SIM Icon">
+                    <p class="tip-text">Get a Local SIM with Wi-Fi</p>
+                </div>
+            </div>
+            <!-- Tip 5 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="tip-card">
+                    <img src="basic.png" alt="Learn Local Language Icon">
+                    <p class="tip-text">Learn Basic Local Phrases</p>
+                </div>
+            </div>
+            <!-- Tip 6 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="tip-card">
+                    <img src="light.png" alt="Pack Light Icon">
+                    <p class="tip-text">Pack Light</p>
+                </div>
+            </div>
+            <!-- Tip 7 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="tip-card">
+                    <img src="exchange.png" alt="Currency Exchange Icon">
+                    <p class="tip-text">Exchange Currency</p>
+                </div>
+            </div>
+            <!-- Tip 8 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="tip-card">
+                    <img src="call.png" alt="Talk to Locals Icon">
+                    <p class="tip-text">Talk to the Locals</p>
+                </div>
+            </div>
+            <!-- Tip 9 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="tip-card">
+                    <img src="eat.png" alt="Eat Street Food Icon">
+                    <p class="tip-text">Eat Street Food</p>
+                </div>
+            </div>
+           
+					
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+	
+	<footer style="background-color: black; color: white; padding: 20px; width: 100%;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto;">
+        <!-- About Us Column -->
+        <div style="width: 30%; padding: 10px;">
+            <h3>About Us</h3>
+            <p>We offer the best travel packages to the world's most popular destinations. Explore the world with us.</p>
+        </div>
+        <!-- Quick Links Column -->
+        <div style="width: 30%; padding: 10px;">
+            <h3>Quick Links</h3>
+            <ul style="list-style-type: none; padding: 0;">
+                <li><a href="#" style="color: white; text-decoration: none;">Home</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;">About</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;">Packages</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;">Contact Us</a></li>
+            </ul>
+        </div>
+        <!-- Contact Us Column -->
+        <div style="width: 30%; padding: 10px;">
+            <h3>Contact Us</h3>
+            <p>Email: info@mastertrip.com</p>
+            <p>Phone: +123 456 7890</p>
+            <p>Address: 123 Travel Street, City, Country</p>
+        </div>
+    </div>
+    <div style="text-align: center; padding: 20px 0; border-top: 1px solid #333;">
+        <p>&copy; 2024 Travel Agent Company. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Responsive Inline Styles -->
+<script>
+    function adjustFooterColumns() {
+        const width = window.innerWidth;
+        const footerColumns = document.querySelectorAll('footer div div');
+        
+        if (width <= 768) {
+            footerColumns.forEach(column => column.style.width = '45%');
+        } else if (width <= 576) {
+            footerColumns.forEach(column => column.style.width = '100%');
+        } else {
+            footerColumns.forEach(column => column.style.width = '30%');
+        }
+    }
+
+    window.addEventListener('resize', adjustFooterColumns);
+    window.addEventListener('load', adjustFooterColumns);
+</script>
+
+  
+	
+	
+</body>
+</html>
